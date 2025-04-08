@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Статья</title>
+</head>
+
+<body>
+    {% block content %}
+    <h1 class="main__title">{{card.title}}</h1>
+    <div class="main__block">
+        <div class="main__text">
+            {{card.text}}
+        </div>
+        <a href="{{ url_for('all_cards') }}">Вернуться к статьям</a>
+    </div>
+    {% endblock %}
+</body>
+
+</html>

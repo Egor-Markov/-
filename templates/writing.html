@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создание своей статьи</title>
+</head>
+
+<body>
+    <h2 class="main__title">Напишите свою статью</h2>
+    {% block content %}
+    <form action="{{ url_for('writing') }}" method="post" class="creat-form">
+        <div class="form__card">
+            <div class="form__inputs">
+                <label for="title">
+                    <input class="form__input" type="text" name="title" id="title" placeholder="Введите заголовок"
+                        required>
+                </label>
+            </div>
+            <label for="text">
+                <textarea class="form__text" name="text" id="text" cols="30" rows="10" required
+                    placeholder="Напишите что-нибудь...">{{text}}</textarea>
+            </label>
+            <button class="form__button">Создать</button>
+        </div>
+    </form>
+    {% endblock %}
+</body>
+
+</html>
